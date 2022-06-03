@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<title>AppRunner VPC Demo</title>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Copliot Demo</a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Add user <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users">Users</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="card" style="width: 50%; margin: 5%">
+    <div class="card-body">
+      <h5 class="card-title">Add user</h5>
+      <form action="{{url_for('create_user')}}" method="post" name="name_textbox">
+        <div class="form-group">
+          <label>Name: </label>
+          <input type="text" class="form-control" name="user" value="{{ user }}" />
+        </div>
+        <div class="form-group">
+          <label>Email: </label>
+          <input type="text" class="form-control" name="email" value="{{ email }}" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-dark">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
